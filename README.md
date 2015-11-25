@@ -34,6 +34,14 @@ require __DIR__ . '/vendor/autoload.php';
 QuimCalpe\ResponseSender\send($response);
 ```
 
+With PHP 5.6 you can import the function straight away:
+
+```php
+use function QuimCalpe\ResponseSender\send AS send_response;
+
+send_response($response);
+```
+
 ## Testing
 
 ``` bash

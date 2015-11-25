@@ -6,20 +6,20 @@ use Psr\Http\Message\StreamInterface;
 
 class MockResponse implements ResponseInterface
 {
-    private $content;
+    private $body;
     private $statusCode;
     private $reasonPhrase;
 
-    public function __construct($content, $statusCode = 200, $reasonPhrase = "")
+    public function __construct($body, $statusCode = 200, $reasonPhrase = "")
     {
-        $this->content = $content;
+        $this->body = $body;
         $this->statusCode = $statusCode;
         $this->reasonPhrase = $reasonPhrase;
     }
 
-    public function getContent()
+    public function getBody()
     {
-        return $this->content;
+        return $this->body;
     }
 
     public function getStatusCode()
@@ -54,8 +54,6 @@ class MockResponse implements ResponseInterface
     public function withAddedHeader($name, $value) {}
 
     public function withoutHeader($name) {}
-
-    public function getBody() {}
 
     public function withBody(StreamInterface $body) {}
 }

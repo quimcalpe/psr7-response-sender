@@ -17,5 +17,5 @@ function send(ResponseInterface $response)
         }
     }
 
-    echo $response->getContent();
+    echo $response->getBody();
 }

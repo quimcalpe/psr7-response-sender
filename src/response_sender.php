@@ -12,7 +12,7 @@ function send(ResponseInterface $response)
         // headers
         foreach ($response->getHeaders() as $header => $values) {
             foreach ($values as $value) {
-                header($header.': '.$value, false, $this->getStatusCode());
+                header($header.': '.$value, false, $response->getStatusCode());
             }
         }
     }
